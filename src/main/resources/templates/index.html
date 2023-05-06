@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de novos cadastros</title>
+</head>
+<body>
+    <table>
+        <a th:href="@{/formCadastro}">Novo Cadastro</a>
+        <tr th:each="post: ${posts}" th:object="${post}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{autor}"></td>
+            <td th:text="*{mensagem}"></td>
+            <td><a th:href="@{'formEditar/'+*{id}}"> </a></td>
+        </tr>
+    </table>
+</body>
+</html>
